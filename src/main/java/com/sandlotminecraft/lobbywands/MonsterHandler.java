@@ -58,7 +58,7 @@ public class MonsterHandler
             if (chanceGoBoom == 1) {
                 ItemStack potion = new ItemStack(Material.SPLASH_POTION, 1);
                 PotionMeta meta = (PotionMeta) potion.getItemMeta();
-                meta.setBasePotionData(new PotionData(PotionType.INSTANT_DAMAGE, false, wandlevel > 4 ? true : false));
+                meta.setBasePotionData(new PotionData(PotionType.HARMING, false, wandlevel > 4 ? true : false));
                 potion.setItemMeta(meta);
                 ThrownPotion thrownPotion = (ThrownPotion) p.launchProjectile(ThrownPotion.class);
                 thrownPotion.setShooter(p);

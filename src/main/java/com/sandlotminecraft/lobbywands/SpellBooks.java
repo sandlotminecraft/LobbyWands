@@ -107,16 +107,16 @@ public class SpellBooks
             if ((book.hasItemMeta()) && (book.getItemMeta().hasDisplayName()) && (book.getItemMeta().getDisplayName().contains("TNT"))) {
                 Vector dir = p.getEyeLocation().getDirection();
 
-                TNTPrimed t = (TNTPrimed)p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.PRIMED_TNT);
+                TNTPrimed t = (TNTPrimed)p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.TNT);
                 t.setFuseTicks(40);
                 t.setVelocity(dir.add(getRandomVector(0.1, 0.4)));
 
                 if (book.getItemMeta().getDisplayName().contains("II")) {
-                    TNTPrimed t2 = (TNTPrimed)p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.PRIMED_TNT);
+                    TNTPrimed t2 = (TNTPrimed)p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.TNT);
                     t2.setFuseTicks(50);
                     t2.setVelocity(dir.add(getRandomVector(0.1, 0.3)));
 
-                    TNTPrimed t3 = (TNTPrimed)p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.PRIMED_TNT);
+                    TNTPrimed t3 = (TNTPrimed)p.getLocation().getWorld().spawnEntity(p.getLocation(), EntityType.TNT);
                     t3.setFuseTicks(60);
                     t3.setVelocity(dir.add(getRandomVector(0.1, 0.5)));
                 }

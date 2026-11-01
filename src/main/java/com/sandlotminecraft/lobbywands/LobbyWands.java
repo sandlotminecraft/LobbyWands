@@ -109,18 +109,18 @@ public class LobbyWands
                     (item.getItemMeta().hasDisplayName()) &&
                     (item.getItemMeta().getDisplayName().contains("Magic"))) {
                 int wandlevel = WandExperience.getLevel((String) item.getItemMeta().getLore().get(2));
-                if (item.containsEnchantment(Enchantment.DAMAGE_ARTHROPODS)) {
-                    item.removeEnchantment(Enchantment.DAMAGE_ARTHROPODS);
+                if (item.containsEnchantment(Enchantment.BANE_OF_ARTHROPODS)) {
+                    item.removeEnchantment(Enchantment.BANE_OF_ARTHROPODS);
                     if (wandlevel >= 1 && wandlevel <= 3) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 1);
+                        item.addUnsafeEnchantment(Enchantment.SHARPNESS, 1);
                     } else if (wandlevel >= 4 && wandlevel <= 5) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 2);
+                        item.addUnsafeEnchantment(Enchantment.SHARPNESS, 2);
                     } else if (wandlevel >= 6 && wandlevel <= 7) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 3);
+                        item.addUnsafeEnchantment(Enchantment.SHARPNESS, 3);
                     } else if (wandlevel >= 8 && wandlevel <= 9) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 4);
+                        item.addUnsafeEnchantment(Enchantment.SHARPNESS, 4);
                     } else if (wandlevel == 10) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 5);
+                        item.addUnsafeEnchantment(Enchantment.SHARPNESS, 5);
                     }
                     p.sendMessage(ChatColor.GOLD + "Your Magic Wand has been upgraded with the Sharpness enchantment!");
                 }
@@ -133,8 +133,8 @@ public class LobbyWands
                     (item.getItemMeta().hasDisplayName()) &&
                     (item.getItemMeta().getDisplayName().contains("Blaze"))) {
                 int wandlevel = WandExperience.getLevel((String) item.getItemMeta().getLore().get(2));
-                if (item.containsEnchantment(Enchantment.DAMAGE_ARTHROPODS)) {
-                    item.removeEnchantment(Enchantment.DAMAGE_ARTHROPODS);
+                if (item.containsEnchantment(Enchantment.BANE_OF_ARTHROPODS)) {
+                    item.removeEnchantment(Enchantment.BANE_OF_ARTHROPODS);
                     if (wandlevel >= 1 && wandlevel <= 5) {
                         item.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 1);
                     } else if (wandlevel >= 5) {
@@ -151,8 +151,8 @@ public class LobbyWands
                     (item.getItemMeta().hasDisplayName()) &&
                     (item.getItemMeta().getDisplayName().contains("Spacetime"))) {
                 int wandlevel = WandExperience.getLevel((String) item.getItemMeta().getLore().get(2));
-                if (item.containsEnchantment(Enchantment.DAMAGE_ARTHROPODS)) {
-                    item.removeEnchantment(Enchantment.DAMAGE_ARTHROPODS);
+                if (item.containsEnchantment(Enchantment.BANE_OF_ARTHROPODS)) {
+                    item.removeEnchantment(Enchantment.BANE_OF_ARTHROPODS);
                     if (wandlevel >= 1 && wandlevel <= 5) {
                         item.addUnsafeEnchantment(Enchantment.KNOCKBACK, 1);
                     } else if (wandlevel >= 5) {
@@ -169,18 +169,18 @@ public class LobbyWands
                     (item.getItemMeta().hasDisplayName()) &&
                     (item.getItemMeta().getDisplayName().contains("Flower"))) {
                 int wandlevel = WandExperience.getLevel((String) item.getItemMeta().getLore().get(2));
-                if (item.containsEnchantment(Enchantment.DAMAGE_ARTHROPODS)) {
-                    item.removeEnchantment(Enchantment.DAMAGE_ARTHROPODS);
+                if (item.containsEnchantment(Enchantment.BANE_OF_ARTHROPODS)) {
+                    item.removeEnchantment(Enchantment.BANE_OF_ARTHROPODS);
                     if (wandlevel >= 1 && wandlevel <= 3) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 1);
+                        item.addUnsafeEnchantment(Enchantment.SMITE, 1);
                     } else if (wandlevel >= 4 && wandlevel <= 5) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 2);
+                        item.addUnsafeEnchantment(Enchantment.SMITE, 2);
                     } else if (wandlevel >= 6 && wandlevel <= 7) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 3);
+                        item.addUnsafeEnchantment(Enchantment.SMITE, 3);
                     } else if (wandlevel >= 8 && wandlevel <= 9) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 4);
+                        item.addUnsafeEnchantment(Enchantment.SMITE, 4);
                     } else if (wandlevel == 10) {
-                        item.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 5);
+                        item.addUnsafeEnchantment(Enchantment.SMITE, 5);
                     }
                     p.sendMessage(ChatColor.GOLD + "Your Flower Wand has been upgraded with the Sharpness enchantment!");
                 }
@@ -274,7 +274,7 @@ public class LobbyWands
     public void onWandDrop(PlayerDropItemEvent event) {
         if ((event.getItemDrop().getItemStack().hasItemMeta()) && (event.getItemDrop().getItemStack().getItemMeta().hasDisplayName()) && (event.getItemDrop().getItemStack().getItemMeta().getDisplayName().contains("Wand"))) {
             event.setCancelled(true);
-        } else if ((event.getItemDrop().getItemStack().hasItemMeta()) && (event.getItemDrop().getItemStack().containsEnchantment(Enchantment.LOOT_BONUS_BLOCKS))) {
+        } else if ((event.getItemDrop().getItemStack().hasItemMeta()) && (event.getItemDrop().getItemStack().containsEnchantment(Enchantment.FORTUNE))) {
             event.setCancelled(true);
         }
     }
@@ -302,7 +302,7 @@ public class LobbyWands
                 && (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasDisplayName())
                 && (event.getPlayer().getItemInHand().getItemMeta().getDisplayName().contains("Wand"))) {
             event.setCancelled(true);
-        } else if ((event.getPlayer() != null) && (event.getPlayer().getInventory().getItemInMainHand().containsEnchantment(Enchantment.LOOT_BONUS_BLOCKS))) {
+        } else if ((event.getPlayer() != null) && (event.getPlayer().getInventory().getItemInMainHand().containsEnchantment(Enchantment.FORTUNE))) {
             event.setCancelled(true);
         }
     }

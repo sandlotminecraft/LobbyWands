@@ -35,7 +35,7 @@ public class SpiderWand
             arthropodsLevel = 5;
         }
         im.setLore(Arrays.asList(new String[]{lore1, lore2, lore3}));
-        im.addEnchant(Enchantment.DAMAGE_ARTHROPODS, arthropodsLevel, true);
+        im.addEnchant(Enchantment.BANE_OF_ARTHROPODS, arthropodsLevel, true);
         wand.setItemMeta(im);
         return wand;
     }
@@ -84,7 +84,7 @@ public class SpiderWand
             if (timesince < cooldown) {
                 p.sendMessage(ChatColor.DARK_PURPLE + "Your wand is still recharging. You can use it again in " + (cooldown - timesince) / 1000L + " seconds.");
             } else {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 300, wandlevel > 4 ? 1 : 0));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, 300, wandlevel > 4 ? 1 : 0));
                 p.getLocation().getWorld().playSound(p.getLocation(), Sound.ENTITY_BLAZE_AMBIENT, 10.0F, 10.0F);
                 p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "Engorgio!" + ChatColor.RESET + "" + ChatColor.GRAY + " - You grow stronger!");
                 LobbyWands.setCooldown(p.getName(), "spider");

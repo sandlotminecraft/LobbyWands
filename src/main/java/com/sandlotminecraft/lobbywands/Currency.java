@@ -21,7 +21,7 @@ public class Currency
     public static ItemStack getGalleons(Integer amount) {
         ItemStack galleon = new ItemStack(Material.SUNFLOWER, amount.intValue());
         ItemMeta gim = galleon.getItemMeta();
-        gim.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 1, true);
+        gim.addEnchant(Enchantment.FORTUNE, 1, true);
         gim.setDisplayName(ChatColor.YELLOW + "" + ChatColor.BOLD + "Gold Galleon");
         gim.setLore(Arrays.asList(new String[]{ChatColor.GOLD + "" + ChatColor.ITALIC + "A Gold Galleon is the", ChatColor.GOLD + "" + ChatColor.ITALIC + "most valuable of all", ChatColor.GOLD + "" + ChatColor.ITALIC + "the Wizarding Coins.", ChatColor.GOLD + "" + ChatColor.ITALIC + "One is worth 17 Sickles."}));
 
@@ -33,7 +33,7 @@ public class Currency
     public static ItemStack getSickles(Integer amount) {
         ItemStack galleon = new ItemStack(Material.NETHER_STAR, amount.intValue());
         ItemMeta gim = galleon.getItemMeta();
-        gim.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 1, true);
+        gim.addEnchant(Enchantment.FORTUNE, 1, true);
         gim.setDisplayName(ChatColor.GRAY + "" + ChatColor.BOLD + "Silver Sickle");
         gim.setLore(Arrays.asList(new String[]{ChatColor.GOLD + "" + ChatColor.ITALIC + "A Silver Sickle is a", ChatColor.GOLD + "" + ChatColor.ITALIC + "valuable coin worth", ChatColor.GOLD + "" + ChatColor.ITALIC + "29 Bronze Knuts."}));
 
@@ -45,7 +45,7 @@ public class Currency
     public static ItemStack getKnuts(Integer amount) {
         ItemStack galleon = new ItemStack(Material.ORANGE_DYE, amount.intValue());
         ItemMeta gim = galleon.getItemMeta();
-        gim.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, 1, true);
+        gim.addEnchant(Enchantment.FORTUNE, 1, true);
         gim.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Bronze Knut");
         gim.setLore(Arrays.asList(new String[]{ChatColor.GOLD + "" + ChatColor.ITALIC + "A Bronze Knut is the", ChatColor.GOLD + "" + ChatColor.ITALIC + "basic currency of", ChatColor.GOLD + "" + ChatColor.ITALIC + "the Wizarding Coins."}));
 
@@ -57,7 +57,7 @@ public class Currency
     @EventHandler
     public void onItemUse(PlayerInteractEvent event) {
         if (((event.getAction() == Action.RIGHT_CLICK_AIR) || (event.getAction() == Action.RIGHT_CLICK_BLOCK)) &&
-                (event.getPlayer().getItemInHand().hasItemMeta()) && (event.getPlayer().getItemInHand().getItemMeta().hasEnchant(Enchantment.LOOT_BONUS_BLOCKS))) {
+                (event.getPlayer().getItemInHand().hasItemMeta()) && (event.getPlayer().getItemInHand().getItemMeta().hasEnchant(Enchantment.FORTUNE))) {
             event.setCancelled(true);
         }
     }

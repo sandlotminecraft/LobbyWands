@@ -173,9 +173,9 @@ public class WandExperience
             // Magic Wand - Increase Sharpness
             if ((newlevel == 4) || (newlevel == 6) || (newlevel == 8 || (newlevel == 10))
                     && (wand.getDisplayName().contains("Magic"))) {
-                int enchantLevel = im.getEnchantLevel(Enchantment.DAMAGE_ALL);
-                im.removeEnchant(Enchantment.DAMAGE_ALL);
-                im.addEnchant(Enchantment.DAMAGE_ALL, enchantLevel + 1, true);
+                int enchantLevel = im.getEnchantLevel(Enchantment.SHARPNESS);
+                im.removeEnchant(Enchantment.SHARPNESS);
+                im.addEnchant(Enchantment.SHARPNESS, enchantLevel + 1, true);
                 p.sendMessage(ChatColor.GOLD + " - Enchantment level has increased!");
             }
 
@@ -196,27 +196,27 @@ public class WandExperience
             // Spider Wand - Bane of Arthropods
             else if ((newlevel == 4) || (newlevel == 7) || (newlevel == 10)
                     && (wand.getDisplayName().contains("Spider"))) {
-                int enchantLevel = im.getEnchantLevel(Enchantment.DAMAGE_ARTHROPODS);
-                im.removeEnchant(Enchantment.DAMAGE_ARTHROPODS);
-                im.addEnchant(Enchantment.DAMAGE_ARTHROPODS, enchantLevel + 1, true);
+                int enchantLevel = im.getEnchantLevel(Enchantment.BANE_OF_ARTHROPODS);
+                im.removeEnchant(Enchantment.BANE_OF_ARTHROPODS);
+                im.addEnchant(Enchantment.BANE_OF_ARTHROPODS, enchantLevel + 1, true);
                 p.sendMessage(ChatColor.GOLD + " - Enchantment level has increased!");
             }
 
             // Flower Wand - Smite
             else if ((newlevel == 4) || (newlevel == 6) || (newlevel == 8 || (newlevel == 10))
                     && (wand.getDisplayName().contains("Flower"))) {
-                int enchantLevel = im.getEnchantLevel(Enchantment.DAMAGE_UNDEAD);
-                im.removeEnchant(Enchantment.DAMAGE_UNDEAD);
-                im.addEnchant(Enchantment.DAMAGE_UNDEAD, enchantLevel + 1, true);
+                int enchantLevel = im.getEnchantLevel(Enchantment.SMITE);
+                im.removeEnchant(Enchantment.SMITE);
+                im.addEnchant(Enchantment.SMITE, enchantLevel + 1, true);
                 p.sendMessage(ChatColor.GOLD + " - Enchantment level has increased!");
             }
 
             // Levitation Wand - Sharpness
             else if ((newlevel == 4) || (newlevel == 6) || (newlevel == 8 || (newlevel == 10))
                     && (wand.getDisplayName().contains("Levitation"))) {
-                int enchantLevel = im.getEnchantLevel(Enchantment.DAMAGE_ALL);
-                im.removeEnchant(Enchantment.DAMAGE_ALL);
-                im.addEnchant(Enchantment.DAMAGE_ALL, enchantLevel + 1, true);
+                int enchantLevel = im.getEnchantLevel(Enchantment.SHARPNESS);
+                im.removeEnchant(Enchantment.SHARPNESS);
+                im.addEnchant(Enchantment.SHARPNESS, enchantLevel + 1, true);
                 p.sendMessage(ChatColor.GOLD + " - Enchantment level has increased!");
             }
 

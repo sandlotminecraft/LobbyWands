@@ -36,7 +36,7 @@ public class MagicWand
             enchantmentLevel = 5;
         }
         im.setLore(Arrays.asList(new String[]{lore1, lore2, lore3}));
-        im.addEnchant(Enchantment.DAMAGE_ALL, enchantmentLevel, true);
+        im.addEnchant(Enchantment.SHARPNESS, enchantmentLevel, true);
         wand.setItemMeta(im);
         return wand;
     }
@@ -84,7 +84,7 @@ public class MagicWand
                     loc = new Location(p.getWorld(), loc.getX() - 0.5D, loc.getY() + 1.0D, loc.getZ() - 0.5D, loc.getYaw(), loc.getPitch());
             }
             //loc.getWorld().playEffect(loc, Effect.VILLAGER_PLANT_GROW, dir, 10);
-            loc.getWorld().spawnParticle(Particle.SPELL, loc, 1);
+            loc.getWorld().spawnParticle(Particle.EFFECT, loc, 1, new Particle.Spell(Color.WHITE, 1.0F));
             loc.getWorld().playSound(loc, Sound.BLOCK_FIRE_EXTINGUISH, 3.0F, 10.0F);
         }
         if ((event.getAction() == Action.RIGHT_CLICK_AIR) || (event.getAction() == Action.RIGHT_CLICK_BLOCK)) {

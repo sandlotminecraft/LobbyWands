@@ -38,7 +38,7 @@ public class FlowerWand
             arthropodsLevel = 4;
         }
         im.setLore(Arrays.asList(new String[]{lore1, lore2, lore3}));
-        im.addEnchant(Enchantment.DAMAGE_ARTHROPODS, arthropodsLevel, true);
+        im.addEnchant(Enchantment.BANE_OF_ARTHROPODS, arthropodsLevel, true);
         wand.setItemMeta(im);
         return wand;
     }
